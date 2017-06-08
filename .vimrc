@@ -61,7 +61,8 @@ nmap <Leader>r :NERDTreeFind<cr>
 " emaulate control-f to find symbols
 nmap <Leader>f :tag<space>
 
-
+" JSON prettify
+nmap <Leader>p :%!python -mjson.tool<cr>
 
 
 
