@@ -1,5 +1,7 @@
-execute pathogen#infect()
-call pathogen#helptags()
+
+so ~/.plugin.vim
+
+
 autocmd vimenter * NERDTree
 filetype plugin indent on                       " use the file type plugins
 let mapleader = ','                             " key to type before each commands here
