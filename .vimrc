@@ -22,6 +22,7 @@ set guioptions-=R
 
 set showtabline=2                               " always show tab line
 
+highlight LineNr ctermfg=green ctermbg=darkblue
 
 "------ Searching ------"
 set hlsearch                                    " highlight search
@@ -68,6 +69,7 @@ nmap <Leader>p :%!python -mjson.tool<cr>
 
 
 "------ Auto-commands ------"
+
 augroup autosourcing
   " clear out the autocommand buffer
   autocmd!
