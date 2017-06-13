@@ -10,7 +10,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-obsession'
 Plugin 'tpope/vim-rhubarb'
-
+Plugin 'skwp/greplace.vim'
 
 
 

@@ -31,6 +31,9 @@ set hlsearch                                    " highlight search
 set incsearch                                   " incremental search
 
 
+"------ Replacing ------"
+set grepprg=ag                                      " use Ag to search
+let g:grep_cmd_opts = '--line-numbers --noheading'
 
 
 
