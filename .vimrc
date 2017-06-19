@@ -1,5 +1,11 @@
+" fix the vimhome variable
+if has('win32') || has ('win64')
+  let $VIMHOME = $VIM."/vimfiles"
+else
+  let $VIMHOME = $HOME."/.vim"
+endif
 
-so ~/.plugin.vim
+so ~/.plugin.vim                                " Source the plugin file
 
 
 autocmd vimenter * NERDTree
@@ -54,6 +60,10 @@ nmap <C-L> <C-W><C-L>
 "------ Mappings ------"
 " edit the vimrc file "
 nmap <Leader>ev :tabedit $MYVIMRC<cr>
+" edit the plugin file "
+nmap <Leader>ep :tabedit ~/.plugin.vim<cr>
+" edit the snippet file "
+nmap <Leader>es :tabedit $VIMHOME/snippets/
 " remove highlight search
 nmap <Leader><space> :nohlsearch<cr>
 " control - 1 to toggle nerdtree

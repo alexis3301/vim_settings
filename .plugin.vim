@@ -11,8 +11,11 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-obsession'
 Plugin 'tpope/vim-rhubarb'
 Plugin 'skwp/greplace.vim'
-
-
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+Plugin 'tpope/vim-surround'
 
 call vundle#end()                               " required
 filetype plugin indent on                       " required
