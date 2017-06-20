@@ -80,7 +80,7 @@ nmap <Leader>f :tag<space>
 " JSON prettify
 nmap <Leader>p :%!python -mjson.tool<cr>
 
-
+nmap <C->> <C-]>
 
 
 "------ Auto-commands ------"
@@ -93,7 +93,19 @@ augroup autosourcing
 augroup END
 
 
+function! IPhpInsertUse()
+  call PhpInsertUse()
+  call feedkeys('a',  'n')
+endfunction
+autocmd FileType php inoremap <Leader>eu <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>eu :call PhpInsertUse()<CR>
 
+function! IPhpExpandClass()
+  call PhpExpandClass()
+  call feedkeys('a', 'n')
+endfunction
+autocmd FileType php inoremap <Leader>ef <Esc>:call IPhpExpandClass()<CR>
+autocmd FileType php noremap <Leader>ef :call PhpExpandClass()<CR>
 
 
 " ------ Notes and tips ------"
@@ -108,3 +120,9 @@ augroup END
 " 'da' and marker to delete marker and content of marker
 " D is for delete, v to select and c to change (select and insert in place,
 " while removing previous content)
+"
+" for vim-surround : 
+" [action]s[modifier1]{[modifier2]}
+" where action is either c for change, or d for delete
+" modifier1 is either t for tag, or a character like ' or "
+" modifier2 is used in change, to replace.
