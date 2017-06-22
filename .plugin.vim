@@ -18,6 +18,8 @@ Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-surround'
 Plugin 'stanangeloff/php.vim'
 Plugin 'arnaud-lb/vim-php-namespace'
+" Plugin 'ervandew/supertab'                    " This one mess up the
+" completion. Better stick with <C-n>
 
 call vundle#end()                               " required
 filetype plugin indent on                       " required
