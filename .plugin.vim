@@ -18,6 +18,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-surround'
 Plugin 'stanangeloff/php.vim'
 Plugin 'arnaud-lb/vim-php-namespace'
+Plugin 'terryma/vim-multiple-cursors'
 " Plugin 'ervandew/supertab'                    " This one mess up the
 " completion. Better stick with <C-n>
 
