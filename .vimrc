@@ -32,6 +32,31 @@ set showtabline=2                               " always show tab line
 
 highlight LineNr ctermfg=green ctermbg=darkblue
 
+highlight BadWhitespace ctermfg=white ctermbg=lightblue
+
+au BufNewFile,BufRead Jenkinsfile setf groovy   " Groovy file syntax highlighting for jenkinsfile
+
+au BufNewFile,BufRead *.py                      " Python coding standards
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
+    \ set encoding=utf-8
+
+
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+let NERDTreeIgnore=['\.pyc$', '\~$']            "ignore files in NERDTree
+
+
+au BufNewFile,BufRead *.js, *.html, *.css       " HTML standards
+    \ set tabstop=2
+    \ set softtabstop=2
+    \ set shiftwidth=2
+
 "------ Searching ------"
 set hlsearch                                    " highlight search
 set incsearch                                   " incremental search
@@ -51,9 +76,6 @@ nmap <C-H> <C-W><C-H>
 nmap <C-J> <C-W><C-J>
 nmap <C-K> <C-W><C-K>
 nmap <C-L> <C-W><C-L>
-
-
-
 
 
 
@@ -81,6 +103,14 @@ nmap <Leader>f :tag<space>
 nmap <Leader>p :%!python -mjson.tool<cr>
 
 nmap <C->> <C-]>
+
+
+" python syntax highlight on
+let python_highlight_all=1
+syntax on
+
+
+
 
 
 "------ Auto-commands ------"

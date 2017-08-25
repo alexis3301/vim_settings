@@ -2,6 +2,7 @@ filetype off                                    " Required
 
 set rtp+=~/.vim/bundle/Vundle.vim               " set the runtime path to include Vundle and initialize
 call vundle#begin()
+" General / php oriented plugins
 Plugin 'VundleVim/Vundle.vim'                   " let Vundle manage Vundle, required
 Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -19,8 +20,16 @@ Plugin 'tpope/vim-surround'
 Plugin 'stanangeloff/php.vim'
 Plugin 'arnaud-lb/vim-php-namespace'
 Plugin 'terryma/vim-multiple-cursors'
-" Plugin 'ervandew/supertab'                    " This one mess up the
-" completion. Better stick with <C-n>
+" Plugin 'ervandew/supertab'                    " This one mess up the completion. Better stick with <C-n>
+Plugin 'Lokaltog/powerline'
+
+" Python related plugins:
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/syntastic'
+Plugin 'nvie/vim-flake8'
+
 
 call vundle#end()                               " required
 filetype plugin indent on                       " required
