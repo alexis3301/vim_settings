@@ -13,9 +13,10 @@ filetype plugin indent on                       " use the file type plugins
 let mapleader = ','                             " key to type before each commands here
 
 "------ Visuals ------"
-set tabstop=2
+set tabstop=4
 set expandtab
-set shiftwidth=2
+set shiftwidth=4
+set nowrap                                      " no auto wrapping
 colorscheme delek
 syntax on                                       " Syntax highlighting
 set number nu                                   " Line numbers
@@ -36,10 +37,20 @@ highlight BadWhitespace ctermfg=white ctermbg=lightblue
 
 au BufNewFile,BufRead Jenkinsfile setf groovy   " Groovy file syntax highlighting for jenkinsfile
 
-au BufNewFile,BufRead *.py                      " Python coding standards
+au BufNewFile,BufRead *.php                      " PHP coding standards
     \ set tabstop=4
     \ set softtabstop=4
     \ set shiftwidth=4
+    \ set textwidth=80
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
+    \ set encoding=utf-8
+
+au BufNewFile,BufRead *.py                      " Python coding standards
+    \ set tabstop=2
+    \ set softtabstop=2
+    \ set shiftwidth=2
     \ set textwidth=79
     \ set expandtab
     \ set autoindent
@@ -49,7 +60,7 @@ au BufNewFile,BufRead *.py                      " Python coding standards
 
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
-let NERDTreeIgnore=['\.pyc$', '\~$']            "ignore files in NERDTree
+let NERDTreeIgnore=['\.pyc$', '\.swp$', '\~$']            "ignore files in NERDTree
 
 
 au BufNewFile,BufRead *.js, *.html, *.css       " HTML standards
@@ -104,13 +115,13 @@ nmap <Leader>p :%!python -mjson.tool<cr>
 
 nmap <C->> <C-]>
 
-
 " python syntax highlight on
 let python_highlight_all=1
 syntax on
 
 
-
+" change the default <TAB> key from YCM, back to snipmate
+let g:ycm_key_list_select_completion = ['<C-TAB>']
 
 
 "------ Auto-commands ------"
@@ -122,7 +133,7 @@ augroup autosourcing
   autocmd bufWritePost .vimrc source %
 augroup END
 
-
+" add the use statement if you point on a given object.
 function! IPhpInsertUse()
   call PhpInsertUse()
   call feedkeys('a',  'n')
@@ -130,6 +141,7 @@ endfunction
 autocmd FileType php inoremap <Leader>eu <Esc>:call IPhpInsertUse()<CR>
 autocmd FileType php noremap <Leader>eu :call PhpInsertUse()<CR>
 
+" auto expand the cursor name into its fully qualified version
 function! IPhpExpandClass()
   call PhpExpandClass()
   call feedkeys('a', 'n')
@@ -137,6 +149,8 @@ endfunction
 autocmd FileType php inoremap <Leader>ef <Esc>:call IPhpExpandClass()<CR>
 autocmd FileType php noremap <Leader>ef :call PhpExpandClass()<CR>
 
+" markdown support:
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " ------ Notes and tips ------"
 " 'zz' to center current line in view port

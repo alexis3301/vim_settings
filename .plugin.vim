@@ -22,6 +22,8 @@ Plugin 'arnaud-lb/vim-php-namespace'
 Plugin 'terryma/vim-multiple-cursors'
 " Plugin 'ervandew/supertab'                    " This one mess up the completion. Better stick with <C-n>
 Plugin 'Lokaltog/powerline'
+Plugin 'yaroot/vissort'                         " Visual sorting
+Plugin 'joonty/vdebug'                          " xdebug for php, nodejs, python, ruby
 
 " Python related plugins:
 Plugin 'tmhedberg/SimpylFold'
