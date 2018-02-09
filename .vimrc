@@ -102,7 +102,9 @@ nmap <Leader><space> :nohlsearch<cr>
 " control - 1 to toggle nerdtree
 nmap <leader>1 :NERDTreeToggle<cr>
 " Show all tags for the current file
-nmap <C-R> :CtrlPBufTag<cr>
+" this is commented out, since it remapped the redo mapping
+" nmap <C-R> :CtrlPBufTag<cr>
+nmap <Leader>R :CtrlPBufTag<cr>
 
 " reveal current file in nerdtree
 nmap <Leader>r :NERDTreeFind<cr>
@@ -151,6 +153,15 @@ autocmd FileType php noremap <Leader>ef :call PhpExpandClass()<CR>
 
 " markdown support:
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+" Drop Vdebug settings at the end of the file " 
+" path_maps are in reverse order compare to docker => guest:host
+let g:vdebug_options = {
+\ 'break_on_open': 1,
+\ 'path_maps': {'/app': '/home/alexis/web/fm'},
+\ 'port': '10000',
+\ 'watch_window_style': 'compact'
+\ }
 
 " ------ Notes and tips ------"
 " 'zz' to center current line in view port
