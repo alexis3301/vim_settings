@@ -28,7 +28,7 @@ set guioptions-=l                               " Remove left scrollbar
 set guioptions-=L                               " remove left scrollbar when windows is split vertically
 set guioptions-=r                               " same for right hand
 set guioptions-=R
-
+set ruler
 set showtabline=2                               " always show tab line
 
 highlight LineNr ctermfg=green ctermbg=darkblue
@@ -158,8 +158,8 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 " path_maps are in reverse order compare to docker => guest:host
 let g:vdebug_options = {
 \ 'break_on_open': 1,
-\ 'path_maps': {'/app': '/home/alexis/web/fm'},
-\ 'port': '10000',
+\ 'path_maps': {'/var/www/': '/Users/alexis.cachat/web/mv-laravel/'},
+\ 'port': '9001',
 \ 'watch_window_style': 'compact'
 \ }
 

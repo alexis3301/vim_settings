@@ -24,6 +24,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Lokaltog/powerline'
 Plugin 'yaroot/vissort'                         " Visual sorting
 Plugin 'joonty/vdebug'                          " xdebug for php, nodejs, python, ruby
+Plugin 'ekalinin/Dockerfile.vim'                " Docker files highlighting
 
 " Python related plugins:
 Plugin 'tmhedberg/SimpylFold'
