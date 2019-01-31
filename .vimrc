@@ -20,10 +20,11 @@ set nowrap                                      " no auto wrapping
 colorscheme delek
 syntax on                                       " Syntax highlighting
 set number nu                                   " Line numbers
-set cursorline                                  " Color the cursorline
+" set cursorline!                                 " Color the cursorline
 set autoindent                                  " Auto indenting
 set smartindent                                 " Smart indenting
-
+set laststatus=2                                " always display powerline status line
+set noshowmode                                  " hide the default mode text
 set guioptions-=l                               " Remove left scrollbar
 set guioptions-=L                               " remove left scrollbar when windows is split vertically
 set guioptions-=r                               " same for right hand
@@ -87,7 +88,6 @@ nmap <C-H> <C-W><C-H>
 nmap <C-J> <C-W><C-J>
 nmap <C-K> <C-W><C-K>
 nmap <C-L> <C-W><C-L>
-
 
 
 "------ Mappings ------"
@@ -154,6 +154,43 @@ autocmd FileType php noremap <Leader>ef :call PhpExpandClass()<CR>
 " markdown support:
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
+
+" phpcomplete-extended
+autocmd FileType php setlocal omnifunc=phpcomplete-extended#CompletePHP
+
+" filenames like *.xml, *.html, *.xhtml, ...
+" These are the file extensions where this plugin is enabled.
+"
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
+
+" filenames like *.xml, *.xhtml, ...
+" This will make the list of non-closing tags self-closing in the specified files.
+"
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
+
+" filetypes like xml, html, xhtml, ...
+" These are the file types where this plugin is enabled.
+"
+let g:closetag_filetypes = 'html,xhtml,phtml'
+
+" filetypes like xml, xhtml, ...
+" This will make the list of non-closing tags self-closing in the specified files.
+"
+let g:closetag_xhtml_filetypes = 'xhtml,jsx'
+
+" integer value [0|1]
+" This will make the list of non-closing tags case-sensitive (e.g. `<Link>` will be closed while `<link>` won't.)
+"
+let g:closetag_emptyTags_caseSensitive = 1
+
+" Shortcut for closing tags, default is '>'
+"
+let g:closetag_shortcut = '>'
+
+" Add > at current position without closing the current tag, default is ''
+"
+let g:closetag_close_shortcut = '<leader>>'
+
 " Drop Vdebug settings at the end of the file " 
 " path_maps are in reverse order compare to docker => guest:host
 let g:vdebug_options = {
@@ -162,6 +199,22 @@ let g:vdebug_options = {
 \ 'port': '9001',
 \ 'watch_window_style': 'compact'
 \ }
+
+
+" Remove the cursorline from nerdtree : 
+let NERDTreeHighlightCursorline=0
+
+
+
+
+
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
+
+
+
+
 
 " ------ Notes and tips ------"
 " 'zz' to center current line in view port
@@ -176,8 +229,12 @@ let g:vdebug_options = {
 " D is for delete, v to select and c to change (select and insert in place,
 " while removing previous content)
 "
+"
 " for vim-surround : 
 " [action]s[modifier1]{[modifier2]}
 " where action is either c for change, or d for delete
 " modifier1 is either t for tag, or a character like ' or "
 " modifier2 is used in change, to replace.
+"
+" scroll bind : when you want to have both verticaly split windows to scroll : 
+" :set scb

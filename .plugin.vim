@@ -21,10 +21,15 @@ Plugin 'stanangeloff/php.vim'
 Plugin 'arnaud-lb/vim-php-namespace'
 Plugin 'terryma/vim-multiple-cursors'
 " Plugin 'ervandew/supertab'                    " This one mess up the completion. Better stick with <C-n>
-Plugin 'Lokaltog/powerline'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'yaroot/vissort'                         " Visual sorting
 Plugin 'joonty/vdebug'                          " xdebug for php, nodejs, python, ruby
 Plugin 'ekalinin/Dockerfile.vim'                " Docker files highlighting
+Plugin 'Shougo/vimproc'
+Plugin 'Shougo/unite.vim'
+Plugin 'christoomey/vim-conflicted'             " solve git conflicts from vim
+" Plugin 'm2mdas/phpcomplete-extended'
+" Plugin 'm2mdas/phpcomplete-extended-laravel'
 
 " Python related plugins:
 Plugin 'tmhedberg/SimpylFold'
@@ -33,6 +38,8 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
 
+" html related plugins:
+Plugin 'alvan/vim-closetag'
 
 call vundle#end()                               " required
 filetype plugin indent on                       " required
